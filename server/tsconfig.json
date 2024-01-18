@@ -1,0 +1,9 @@
+{
+    "compilerOptions":{
+        "module": "CommonJS",
+        "removeComments": true,
+        "sourceMap": true,
+        "outDir": "dist/"
+    },
+    "include": ["src/**/*"],
+}

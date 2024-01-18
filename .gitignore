@@ -1,0 +1,33 @@
+#node modules
+/my-portfolio/node_modules/*
+/server/node_modules/*
+# Logs
+/.DB_Store
+
+/my-portfolio/logs
+/my-portfolio/*.log
+/my-portfolio/npm-debug.log*
+/my-portfolio/yarn-debug.log*
+/my-portfolio/yarn-error.log*
+/my-portfolio/pnpm-debug.log*
+/my-portfolio/lerna-debug.log*
+
+/my-portfolio/dist
+/my-portfolio/dist-ssr
+/my-portfolio/*.local
+
+# Editor directories and files
+/my-portfolio/.vscode/*
+/my-portfolio/!.vscode/extensions.json
+/my-portfolio/.idea
+my-portfolio/.DS_Store
+/my-portfolio/*.suo
+/my-portfolio/*.ntvs*
+/my-portfolio/*.njsproj
+/my-portfolio/*.sln
+/my-portfolio/*.sw?
+.DS_Store
+/server/.env
+/server/dist
+/server/Blog.json
+/server/Project.json
