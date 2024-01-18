@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-import AvatarSrc from "../../../../assets/avatar.svg"
+import AvatarSrc from "../../../../assets/avatar.png"
 export default function HeroSection({setSectionOpen}:{setSectionOpen:Function}):ReactNode{
     return(
         <div onMouseEnter={()=>setSectionOpen(0)}  id="Home" className=" w-full h-fit p-2 pt-20 flex flex-col lg:flex-row-reverse items-center justify-center gap-5">
