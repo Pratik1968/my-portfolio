@@ -6,6 +6,7 @@ dotenv.config();
 let Project:Array<JSON> ;
 const app: Express = express();
 const port = process.env.PORT || 3000;
+app.use(express.static("../../my-portfolio/dist"))
 app.get("/getProjects", (req: Request, res: Response) => {
     fs.readFile(process.env.PROJECT_PATH,"utf-8",(error:Error,result:string)=>{
         if(error){
