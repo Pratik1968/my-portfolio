@@ -15,7 +15,7 @@ Welcome to my portfolio website repository! This repository contains the source 
 
 ## Demo
 
-Check out the live demo of my portfolio website at [your-portfolio-url.com](https://www.pratikshekhar.in).
+Check out the live demo of my portfolio website at [link](https://www.pratikshekhar.in).
 
 ## Technologies Used
 
