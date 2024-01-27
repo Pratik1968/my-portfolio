@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode,  useState } from "react";
 import "./style.module.scss"
 import HeroSection from "./Section/HeroSection/layout";
 import SkillSection from "./Section/SkillSection/layout";

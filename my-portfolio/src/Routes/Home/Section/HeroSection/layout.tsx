@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import  { ReactNode } from "react";
 
 import AvatarSrc from "../../../../assets/avatar.png"
 export default function HeroSection({setSectionOpen}:{setSectionOpen:Function}):ReactNode{
