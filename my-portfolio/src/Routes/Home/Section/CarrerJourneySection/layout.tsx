@@ -37,6 +37,18 @@ iconStyle={{backgroundColor:"transparent",boxShadow:"none"}}
                     <h1 className="font-bold"> Joined Collage </h1>
                     <p>Ah, college life—the absolute zenith of intense intellectual rigor, where quizzes and assignments are undoubtedly the epitome of a stress-free and leisurely existence. Truly living the dream! 😌🎓</p>
                     </VerticalTimelineElement>            
+                    <VerticalTimelineElement
+                date="2023"
+                icon ={<TimelineArrowImage/>}
+                contentArrowStyle={{display:"none"}}
+                iconClassName="flex item-center justify-center"
+iconStyle={{backgroundColor:"transparent",boxShadow:"none"}}
+                contentStyle={{borderRadius:"20px",boxShadow:"none",marginBottom:"5rem"}}
+                dateClassName="text-bold text-white"
+                >
+                    <h1 className="font-bold">Learned Flutter </h1>
+                    <p>Starting with Flutter opened up possibilities for creating apps across different platforms without writing separate codebases.</p>
+                    </VerticalTimelineElement>
 <VerticalTimelineElement
                 date="2022"
                 icon ={<TimelineArrowImage/>}

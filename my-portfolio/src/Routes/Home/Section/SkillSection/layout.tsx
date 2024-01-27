@@ -7,7 +7,7 @@ import NodeImageSrc from "../../../../assets/nodeImage.svg";
 import PostgresqlImageSrc from "../../../../assets/postgresqlImage.svg";
 import TailwindImageSrc from "../../../../assets/tailwindImage.svg";
 import TypescriptImageSrc from "../../../../assets/typescriptImage.svg";
-
+import FlutterImageSrc from "../../../../assets/flutterImage.svg"
 export default function SkillSection({setSectionOpen}:{setSectionOpen:Function}):ReactNode{
     return(
         <div onMouseEnter={()=>setSectionOpen(1)} id="Skills" className="w-full h-fit p-3 flex flex-col">
@@ -21,7 +21,8 @@ export default function SkillSection({setSectionOpen}:{setSectionOpen:Function})
     <SkillCardTemplate ImageSrc={PostgresqlImageSrc} CardTitle="Postgresql" CardDiscription="PostgreSQL: web dev's powerhouse, blending reliability, scalability, and ACID compliance. A versatile maestro for seamless data orchestration, turning complexity into a harmonious symphony."/>
     <SkillCardTemplate ImageSrc={TailwindImageSrc} CardTitle="Tailwind" CardDiscription="Tailwind is essential in web development, streamlining and accelerating the styling process with its utility-first CSS framework, ensuring efficient and consistent design implementation."/>
     <SkillCardTemplate ImageSrc={TypescriptImageSrc} CardTitle="Typescript" CardDiscription="TypeScript is crucial in web development, enhancing JavaScript with static typing for improved code quality, tooling, and maintainability, seamlessly integrating with HTML, CSS, and popular frameworks."/>
-    
+    <SkillCardTemplate ImageSrc={FlutterImageSrc} CardTitle="Flutter" CardDiscription="Flutter is a free and open-source framework for building beautiful, high-performance apps for mobile, web, desktop, and embedded devices from a single codebase."/>
+
 </div>
         </div>
     )
