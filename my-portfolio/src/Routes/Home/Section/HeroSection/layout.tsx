@@ -31,7 +31,7 @@ function Title({className}:{className:string}):ReactNode{
 function ContentText({className}:{className:string}):ReactNode{
     return(
 <div className={className}>
-<p className="w-fit lg:w-1/2 p-2 text-center">Hi, I'm Pratik Shekhar, a MERN stack developer. I specialize in MongoDB, Express.js, React, and Node.js, crafting dynamic and seamless web applications. Let's build something awesome!</p>
+<p className="w-fit lg:w-1/2 p-2 text-center">Hi, I'm Pratik Shekhar, Full-stack developer passionate about creating user-centric applications that perform flawlessly</p>
 </div>
     );
 }
