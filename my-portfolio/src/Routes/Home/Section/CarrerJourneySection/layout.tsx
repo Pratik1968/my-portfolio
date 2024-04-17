@@ -34,7 +34,7 @@ iconStyle={{backgroundColor:"transparent",boxShadow:"none"}}
                 contentStyle={{borderRadius:"20px",boxShadow:"none",marginBottom:"5rem"}}
                 dateClassName="text-bold text-white"
                 >
-                    <h1 className="font-bold"> Joined Collage </h1>
+                    <h1 className="font-bold"> Joined College </h1>
                     <p>Ah, college life—the absolute zenith of intense intellectual rigor, where quizzes and assignments are undoubtedly the epitome of a stress-free and leisurely existence. Truly living the dream! 😌🎓</p>
                     </VerticalTimelineElement>            
                     <VerticalTimelineElement
