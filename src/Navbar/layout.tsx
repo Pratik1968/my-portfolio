@@ -1,5 +1,5 @@
-import { ReactNode, useState } from "react";
-export default function Navbar({sectionOpen,setSectionOpen}:{sectionOpen:number,setSectionOpen:Function}):ReactNode{
+import { Dispatch, ReactNode, SetStateAction, useState } from "react";
+export default function Navbar({sectionOpen,setSectionOpen}:{sectionOpen:number,setSectionOpen:Dispatch<SetStateAction<number>>}):ReactNode{
   const  [Navigation_open_or_not,setNavigation_open_or_not ]= useState(false);
   return(
     <div className="w-full h-fit flex flex-col lg:flex-row fixed bg-primary z-[2]">
@@ -24,7 +24,7 @@ function Title({className}:{className:string}):ReactNode{
         </div>
         );
 }
-function HamburgerIcon({open,setOpen,className}:{className:string,open:boolean,setOpen:Function}):ReactNode{
+function HamburgerIcon({open,setOpen,className}:{className:string,open:boolean,setOpen:(value:boolean)=>void}):ReactNode{
     
     
     return(
@@ -42,12 +42,12 @@ menu
         
     );
 }
-function NavList({className,sectionOpen,setSectionOpen}:{className:string,sectionOpen:number,setSectionOpen:Function}):ReactNode{
-   let activeClass = `
+function NavList({className,sectionOpen,setSectionOpen}:{className:string,sectionOpen:number,setSectionOpen:(value:number)=>void}):ReactNode{
+   const activeClass = `
    text-secondary underline
    `
-   let navItem = ["Home","Skills","Journey","Project","Blog","Contact"]
-   let onClickNavItem = (index:number) =>{
+   const navItem = ["Home","Skills","Journey","Project","Blog","Contact"]
+   const onClickNavItem = (index:number) =>{
 setSectionOpen(index)
    }
    return(

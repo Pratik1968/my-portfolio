@@ -1,14 +1,15 @@
 import { ReactNode, useEffect, useState } from "react";
-interface project_interface{
-    title:string;
-    discription:string;
-    tech_stack:string;
-    link:string
-}
-export default function ProjectSection({setSectionOpen}:{setSectionOpen:Function}):ReactNode{
-  const [project,setProject] = useState<Array<project_interface>>([])
+import getData from "../../../../helper/graphql";
+import ProjectQueryResponse, { Project } from "../../../../helper/project.interface";
+import Query from "../../../../helper/query";
+
+export default function ProjectSection({setSectionOpen}:{setSectionOpen:(value:number)=>void}):ReactNode{
+  const [project,setProject] = useState<Project[]>([]);
     useEffect(()=>{
-        fetch("/getProjects").then(res=>res.json()).then(res=>{setProject(res);console.log(res)})
+getData<ProjectQueryResponse>(Query.projectQuery).then((value)=>{
+ setProject(value.projectCollection.items);
+
+})
     },[])
     return(
         <div onMouseEnter={()=>setSectionOpen(3)} className="w-full h-fit flex flex-col" id="Project">
@@ -17,12 +18,12 @@ export default function ProjectSection({setSectionOpen}:{setSectionOpen:Function
 
 
 {
-    project.length===0 && <p className="text-gray-50 self-center justify-self-center">Nothing to show</p>
+    project!.length===0 && <p className="text-gray-50 self-center justify-self-center">Nothing to show</p>
 }
 {
-   project.map((value:project_interface,index:any)=>{
+   project!.map((project:Project,index:number)=>{
     return(
-     <ProjectCardTemplate key={index} link={value.link} Name={value.title} discription={value.discription} TechStack={value.tech_stack}/>   
+     <ProjectCardTemplate key={index} link={project.link} Name={project.title} discription={project.description} TechStack={project.techStack}/>   
     );
    })
 }

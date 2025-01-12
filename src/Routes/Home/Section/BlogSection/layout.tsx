@@ -1,15 +1,17 @@
 import { ReactNode, useEffect, useState } from "react";
+import BlogQueryResponse, { Blog } from "../../../../helper/blog.interface";
+import getData from "../../../../helper/graphql";
+import Query from "../../../../helper/query";
 
-interface Blogs{
-title:string;
-discription:string;
-link:string;
-}
-export default function BlogSection({setSectionOpen}:{setSectionOpen:Function}):ReactNode{
-  const [blogs,setBlogs] = useState<Array<Blogs>>([])
+
+export default function BlogSection({setSectionOpen}:{setSectionOpen:(value:number)=>void}):ReactNode{
+  const [blogs,setBlogs] = useState<Blog[]>([])
   useEffect(()=>{
-    fetch("/getBlogs").then(res=>res.json()).then(res=>setBlogs(res))
-  },[])
+getData<BlogQueryResponse>(Query.blogQuery).then((value)=>{
+    setBlogs(value.blogCollection.items);
+
+})
+},[])
     return(
         <div onMouseEnter={()=>setSectionOpen(4)} className="text-white" id="Blog">
             <Title/>
@@ -19,9 +21,9 @@ export default function BlogSection({setSectionOpen}:{setSectionOpen:Function}):
     blogs.length===0 && <p className="text-gray-50 self-center justify-self-center">Nothing to show</p>
 }
     {
-blogs.map((value:Blogs,index:any)=>{
+blogs.map((value:Blog,index:number)=>{
     return(
-        <BlogCardTemplate key={index} Name={value.title} discription={value.discription} link={value.link}/>
+        <BlogCardTemplate key={index} Name={value.title} discription={value.description} link={value.link}/>
     )
 })
     }
