@@ -4,7 +4,7 @@ import getData from "../../../../helper/graphql";
 import Query from "../../../../helper/query";
 
 
-export default function BlogSection({setSectionOpen}:{setSectionOpen:Function}):ReactNode{
+export default function BlogSection({setSectionOpen}:{setSectionOpen:(value:number)=>void}):ReactNode{
   const [blogs,setBlogs] = useState<Blog[]>([])
   useEffect(()=>{
 getData<BlogQueryResponse>(Query.blogQuery).then((value)=>{
@@ -21,7 +21,7 @@ getData<BlogQueryResponse>(Query.blogQuery).then((value)=>{
     blogs.length===0 && <p className="text-gray-50 self-center justify-self-center">Nothing to show</p>
 }
     {
-blogs.map((value:Blog,index:any)=>{
+blogs.map((value:Blog,index:number)=>{
     return(
         <BlogCardTemplate key={index} Name={value.title} discription={value.description} link={value.link}/>
     )

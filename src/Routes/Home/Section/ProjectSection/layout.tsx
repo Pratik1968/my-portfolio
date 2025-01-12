@@ -3,7 +3,7 @@ import getData from "../../../../helper/graphql";
 import ProjectQueryResponse, { Project } from "../../../../helper/project.interface";
 import Query from "../../../../helper/query";
 
-export default function ProjectSection({setSectionOpen}:{setSectionOpen:Function}):ReactNode{
+export default function ProjectSection({setSectionOpen}:{setSectionOpen:(value:number)=>void}):ReactNode{
   const [project,setProject] = useState<Project[]>([]);
     useEffect(()=>{
 getData<ProjectQueryResponse>(Query.projectQuery).then((value)=>{
@@ -21,7 +21,7 @@ getData<ProjectQueryResponse>(Query.projectQuery).then((value)=>{
     project!.length===0 && <p className="text-gray-50 self-center justify-self-center">Nothing to show</p>
 }
 {
-   project!.map((project:Project,index:any)=>{
+   project!.map((project:Project,index:number)=>{
     return(
      <ProjectCardTemplate key={index} link={project.link} Name={project.title} discription={project.description} TechStack={project.techStack}/>   
     );

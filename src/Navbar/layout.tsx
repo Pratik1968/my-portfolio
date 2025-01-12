@@ -1,5 +1,5 @@
 import { ReactNode, useState } from "react";
-export default function Navbar({sectionOpen,setSectionOpen}:{sectionOpen:number,setSectionOpen:Function}):ReactNode{
+export default function Navbar({sectionOpen,setSectionOpen}:{sectionOpen:number,setSectionOpen:()=>void}):ReactNode{
   const  [Navigation_open_or_not,setNavigation_open_or_not ]= useState(false);
   return(
     <div className="w-full h-fit flex flex-col lg:flex-row fixed bg-primary z-[2]">
@@ -43,11 +43,11 @@ menu
     );
 }
 function NavList({className,sectionOpen,setSectionOpen}:{className:string,sectionOpen:number,setSectionOpen:(value:number)=>void}):ReactNode{
-   let activeClass = `
+   const activeClass = `
    text-secondary underline
    `
-   let navItem = ["Home","Skills","Journey","Project","Blog","Contact"]
-   let onClickNavItem = (index:number) =>{
+   const navItem = ["Home","Skills","Journey","Project","Blog","Contact"]
+   const onClickNavItem = (index:number) =>{
 setSectionOpen(index)
    }
    return(
