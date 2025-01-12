@@ -1,5 +1,5 @@
-import { ReactNode, useState } from "react";
-export default function Navbar({sectionOpen,setSectionOpen}:{sectionOpen:number,setSectionOpen:()=>void}):ReactNode{
+import { Dispatch, ReactNode, SetStateAction, useState } from "react";
+export default function Navbar({sectionOpen,setSectionOpen}:{sectionOpen:number,setSectionOpen:Dispatch<SetStateAction<number>>}):ReactNode{
   const  [Navigation_open_or_not,setNavigation_open_or_not ]= useState(false);
   return(
     <div className="w-full h-fit flex flex-col lg:flex-row fixed bg-primary z-[2]">
