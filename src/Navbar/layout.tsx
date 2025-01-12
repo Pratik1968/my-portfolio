@@ -24,7 +24,7 @@ function Title({className}:{className:string}):ReactNode{
         </div>
         );
 }
-function HamburgerIcon({open,setOpen,className}:{className:string,open:boolean,setOpen:Function}):ReactNode{
+function HamburgerIcon({open,setOpen,className}:{className:string,open:boolean,setOpen:(value:boolean)=>void}):ReactNode{
     
     
     return(
@@ -42,7 +42,7 @@ menu
         
     );
 }
-function NavList({className,sectionOpen,setSectionOpen}:{className:string,sectionOpen:number,setSectionOpen:Function}):ReactNode{
+function NavList({className,sectionOpen,setSectionOpen}:{className:string,sectionOpen:number,setSectionOpen:(value:number)=>void}):ReactNode{
    let activeClass = `
    text-secondary underline
    `
